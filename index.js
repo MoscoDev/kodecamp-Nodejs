@@ -100,7 +100,7 @@ app.delete("/users/:id", (req, res) => {
      }
    })
    if (user) {
-    users.splice(users.length-1, 1);
+    users.splice(users.indexOf(user), 1);
      res.status(200).send(users)
    }else{
     res.status(404).send('user not found')
